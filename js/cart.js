@@ -52,6 +52,16 @@ window.Cart = (function () {
     });
     write();
     sync();
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "AddToCart", {
+        content_ids: [item.slug],
+        content_name: item.title || "Produto",
+        content_type: "product",
+        contents: [{ id: item.slug, quantity: 1 }],
+        value: Number(item.price) || 0,
+        currency: "BRL"
+      });
+    }
     return "added";
   }
   function remove(slug) {

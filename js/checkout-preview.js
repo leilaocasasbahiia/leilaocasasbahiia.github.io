@@ -240,6 +240,16 @@
         try { const saved = JSON.parse(localStorage.getItem('arremata_cart') || '[]'); if (Array.isArray(saved)) slugs = saved.filter(p => p && typeof p.slug === 'string').map(p => p.slug); } catch (_) {}
       }
       items = catalog.filter(p => slugs.includes(p.slug)).map(p => ({...p, basePriceCents:p.priceCents, priceCents:StorePricing.total(p.priceCents)}));
+      if (items.length && typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', {
+          content_ids: items.map(item => item.slug),
+          content_type: 'product',
+          contents: items.map(item => ({id:item.slug,quantity:1})),
+          num_items: items.length,
+          value: items.reduce((sum,item) => sum + item.priceCents, 0) / 100,
+          currency: 'BRL'
+        });
+      }
       renderItems();
       if (!items.length) { $('checkoutNotice').textContent = 'Selecione um produto no catálogo para iniciar o checkout.'; $('checkoutNotice').hidden = false; }
       $('previewSubmit').disabled = !items.length;
