@@ -1,0 +1,19 @@
+{
+  "name": "arremata-checkout-pix",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node --env-file-if-exists=.env.local scripts/dev.js",
+    "setup": "node scripts/setup-env.js",
+    "db:setup": "node --env-file-if-exists=.env.local scripts/setup-orders-db.js",
+    "test": "node --test test/manual-pix.test.js test/saved-orders.test.js",
+    "test:archived": "node --test test/checkout.test.js test/direct-service.test.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0"
+  }
+}

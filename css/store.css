@@ -1,0 +1,29 @@
+[hidden]{display:none!important}
+.store-wordmark{display:block;width:197px;color:#0033c6!important;font-size:27px;font-weight:800;letter-spacing:-1px;white-space:nowrap}.store-wordmark b{font-size:12px;color:#e5192d;letter-spacing:-.3px}
+.search-form input{min-width:0}.card__sub{text-decoration:none}.card__meta svg,.card__timer svg{width:14px;height:14px}.card__price{white-space:nowrap}.fav-btn[aria-pressed=true]{color:#e5192d;background:#fff0f1}.header-action--cart .cart-badge{display:flex}.store-footer{max-width:1280px;margin:auto;padding:40px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}.store-footer h3{font-size:14px;margin-bottom:16px}.store-footer a:not(.logo),.store-footer p{display:block;font-size:13px;line-height:1.8;margin:6px 0}.store-footer-bottom{text-align:center;padding:20px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted)}.store-buy{display:flex;justify-content:center;text-align:center;margin-top:22px}.store-add{width:100%;padding:14px;margin-top:12px;border:1px solid var(--brand-blue);border-radius:8px;color:var(--brand-blue);font-weight:700}.pdp-title-row h1{white-space:normal;overflow-wrap:anywhere}.pdp__gallery,.pdp__info,.results{min-width:0}.pdp__thumbs{flex-wrap:wrap}.store-description{margin:30px 0;background:#fff;padding:26px;border:1px solid var(--border);border-radius:16px}.store-description h2,.related h2{font-size:20px;margin-bottom:18px}.store-description p{font-size:14px;line-height:1.8;margin-top:10px}#emptyResults{padding:32px;background:white;border-radius:12px}body :is(a,button,input,select):focus-visible{outline:3px solid #155cf280;outline-offset:3px}.store-large-text{font-size:120%}.store-large-text :is(p,label,input,button,a){font-size:1rem}
+@media(max-width:860px){.store-wordmark{width:134px;font-size:22px;letter-spacing:-.5px}.store-wordmark b{font-size:8px}.filters.store-open{display:block;position:static;width:100%;height:auto;max-height:none;transform:none;padding:0;box-shadow:none}.store-footer{grid-template-columns:1fr 1fr}.store-footer>div:first-child{grid-column:1/-1}}
+@media(max-width:520px){.store-footer{gap:20px}.pdp-title-row h1{font-size:22px}.sort-select select{max-width:160px}.store-wordmark{width:134px}}
+@media(min-width:981px){.promo-bar{min-height:68px}}@media(max-width:520px){.page-head h1{min-height:78px;align-items:flex-start}}
+.campaign-countdown{background:#fff0f1!important;color:#e30613!important;font-variant-numeric:tabular-nums;font-weight:600}.campaign-last-hours{background:#e30613!important}.campaign-detail{padding:12px 16px;border-radius:8px;font-size:14px}.card__timer.campaign-countdown{white-space:nowrap}
+.card__timer.campaign-countdown{white-space:normal;line-height:1.5}
+.campaign-countdown{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px;background:#fff0f1!important;color:#e30613!important;font-weight:500}.campaign-label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.campaign-digits{font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto}.campaign-detail .campaign-label{gap:6px}
+
+/* Nome comercial em duas linhas para caber no cabe?alho. */
+.store-wordmark{font-size:24px;line-height:1.15}.store-wordmark b{display:block;margin-top:3px}@media(max-width:860px){.store-wordmark{font-size:20px}}
+
+.bid-dialog{border:0;border-radius:16px;padding:36px 29px 34px;width:min(398px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;color:#1c1d22;background:#fff;box-shadow:0 20px 80px #0003;text-align:center}
+.bid-dialog::backdrop{background:#101827a6}
+.bid-dialog__success{display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1b9f5b;color:#fff;margin:0 auto 18px}
+.bid-dialog h2{font-size:20px;line-height:1.3;font-weight:800;margin:0 0 8px}
+.bid-dialog__product{font-size:14px;line-height:1.5;margin:0;color:#727b8c}
+.bid-dialog__product strong{color:#1c1d22;font-weight:700}
+.bid-dialog__price-note{font-size:12px;line-height:1.4;color:#727b8c;margin:7px 0 0}
+.bid-dialog__notice{display:flex;gap:9px;align-items:flex-start;border:1px solid #ffd479;border-radius:10px;background:#fffaeb;padding:12px 14px;margin:19px 0 18px;text-align:left;font-size:13px;line-height:1.5;color:#926a08}
+.bid-dialog__notice svg{flex:none;color:#c18b00;margin-top:2px}
+.bid-dialog__primary,.bid-dialog__cancel{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:11px 12px;border-radius:5px;font-family:inherit;line-height:1.4;text-decoration:none;cursor:pointer}
+.bid-dialog__primary{background:#1959f7;color:#fff;border:1px solid #1959f7;font-weight:700;font-size:14px}
+.bid-dialog__primary:hover{background:#1047d4}
+.bid-dialog__cancel{margin-top:10px;border:1px solid #cbd2df;color:#1959f7;background:white;font-weight:700;font-size:14px}
+.bid-dialog__cancel:hover{background:#f4f7ff}
+
+.store-wordmark .store-wordmark-certa{color:#e5192d;font-weight:400}

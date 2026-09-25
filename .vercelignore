@@ -1,0 +1,6 @@
+.tools/
+.local-data/
+.env*
+Microsoft/
+test/
+test-results/

@@ -1,0 +1,377 @@
+{
+    "iphone-15-pro-max":  {
+                              "gallery":  [
+                                              "images/products/iphone-15-pro-max-1.jpg",
+                                              "images/products/iphone-15-pro-max-2.jpg",
+                                              "images/products/iphone-15-pro-max-3.jpg"
+                                          ],
+                              "description":  [
+                                                  "iPhone 15 Pro Max, 256GB, na cor Titânio Preto. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                                  "Tela Super Retina XDR de 6,7\", chip A17 Pro, sistema de câmeras Pro triplo com Zoom óptico 5x e bateria de longa duração. Acompanha cabo USB-C na caixa."
+                                              ]
+                          },
+    "galaxy-s25-ultra":  {
+                             "gallery":  [
+                                             "images/products/galaxy-s25-ultra-1.jpg",
+                                             "images/products/galaxy-s25-ultra-2.jpg",
+                                             "images/products/galaxy-s25-ultra-3.jpg",
+                                             "images/products/galaxy-s25-ultra-4.jpg"
+                                         ],
+                             "description":  [
+                                                 "Samsung Galaxy S25 Ultra, 512GB, na cor Titânio Preto, acompanha S Pen e carregador. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                                 "Tela Dynamic AMOLED 2X de 6,9\", processador Snapdragon 8 Elite, câmera quádrupla com sensor principal de 200MP e bateria de 5.000mAh. Acompanha carregador e cabo original na caixa."
+                                             ]
+                         },
+    "geladeira-french-door":  {
+                                  "gallery":  [
+                                                  "images/products/geladeira-french-door-1.jpg",
+                                                  "images/products/geladeira-french-door-2.jpg",
+                                                  "images/products/geladeira-french-door-3.jpg",
+                                                  "images/products/geladeira-french-door-4.jpg"
+                                              ],
+                                  "description":  [
+                                                      "Geladeira Brastemp French Door, 554 litros, com três portas, dispenser de água externo e sistema Frost Free. Peça recolhida em leilão, testada e funcionando, com pequenos riscos de uso no aço escovado.",
+                                                      "Compartimento Twist Ice Twister para gelo, prateleiras ajustáveis e gaveta para hortifruti com controle de umidade. Voltagem 220V."
+                                                  ]
+                              },
+    "iphone-16-pro-max":  {
+                              "gallery":  [
+                                              "images/products/iphone-16-pro-max-1.jpg",
+                                              "images/products/iphone-16-pro-max-2.jpg",
+                                              "images/products/iphone-16-pro-max-3.jpg",
+                                              "images/products/iphone-16-pro-max-4.jpg"
+                                          ],
+                              "description":  [
+                                                  "iPhone 16 Pro Max, 256GB, na cor Titânio Preto. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                                  "Tela Super Retina XDR de 6,9\", chip A18 Pro, sistema de câmeras Pro com Controle de Câmera e botão de Ação. Acompanha cabo USB-C na caixa."
+                                              ]
+                          },
+    "ar-condicionado-lg":  {
+                               "gallery":  [
+                                               "images/products/ar-condicionado-lg-1.jpg",
+                                               "images/products/ar-condicionado-lg-2.jpg",
+                                               "images/products/ar-condicionado-lg-3.jpg",
+                                               "images/products/ar-condicionado-lg-4.jpg"
+                                           ],
+                               "description":  [
+                                                   "Ar condicionado Split LG Dual Inverter, 24.000 BTUs, ciclo frio, com unidade externa e interna. Equipamento novo, lacrado de fábrica, recolhido em lote de leilão de importadora.",
+                                                   "Baixo nível de ruído, filtro de purificação do ar e função de resfriamento rápido. Instalação não inclusa no lance."
+                                               ]
+                           },
+    "playstation-5-slim":  {
+                               "gallery":  [
+                                               "images/products/playstation-5-slim-1.png",
+                                               "images/products/playstation-5-slim-2.png",
+                                               "images/products/playstation-5-slim-3.png",
+                                               "images/products/playstation-5-slim-4.png",
+                                               "images/products/playstation-5-slim-5.png"
+                                           ],
+                               "description":  [
+                                                   "Console PlayStation 5 Slim com unidade de disco, acompanha 2 controles DualSense sem fio. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                                   "Suporte a jogos em 4K, SSD ultra rápido e compatibilidade com o catálogo PS4 e PS5. Acompanha cabos originais."
+                                               ]
+                           },
+    "iphone-17-pro":  {
+                          "gallery":  [
+                                          "images/products/iphone-17-pro-1.png",
+                                          "images/products/iphone-17-pro-2.png",
+                                          "images/products/iphone-17-pro-3.png",
+                                          "images/products/iphone-17-pro-4.png",
+                                          "images/products/iphone-17-pro-5.png"
+                                      ],
+                          "description":  [
+                                              "iPhone 17 Pro, 256GB, na cor Laranja Cósmico. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                              "Design em titânio, sistema de câmeras Pro de última geração e desempenho recorde. Acompanha cabo USB-C na caixa."
+                                          ]
+                      },
+    "drone-dji-mini":  {
+                           "gallery":  [
+                                           "images/products/drone-dji-mini-1.jpg",
+                                           "images/products/drone-dji-mini-2.jpg",
+                                           "images/products/drone-dji-mini-3.jpg",
+                                           "images/products/drone-dji-mini-4.jpg"
+                                       ],
+                           "description":  [
+                                               "Drone DJI Mini com Fly More Combo: inclui controle remoto, bateria extra, hélices sobressalentes, cabo de dados e case de transporte. Câmera estabilizada em gimbal de 3 eixos com gravação em 4K.",
+                                               "Peso abaixo de 249g, dispensando registro em alguns países. Ideal para fotografia e vídeo aéreo, ainda na caixa original."
+                                           ]
+                       },
+    "airpods-max":  {
+                        "gallery":  [
+                                        "images/products/airpods-max-1.jpg",
+                                        "images/products/airpods-max-2.jpg",
+                                        "images/products/airpods-max-3.jpg"
+                                    ],
+                        "description":  [
+                                            "Apple AirPods Max, cancelamento ativo de ruído, áudio espacial personalizado e hastes acolchoadas em malha respirável. Cor cinza espacial.",
+                                            "Acompanha estojo Smart Case e cabo Lightning para USB-C. Bateria com boa autonomia, testada antes do leilão."
+                                        ]
+                    },
+    "geladeira-brastemp":  {
+                               "gallery":  [
+                                               "images/products/geladeira-brastemp-1.jpg",
+                                               "images/products/geladeira-brastemp-2.jpg",
+                                               "images/products/geladeira-brastemp-3.jpg",
+                                               "images/products/geladeira-brastemp-4.jpg"
+                                           ],
+                               "description":  [
+                                                   "Geladeira Brastemp Frost Free, 2 portas, freezer inferior, na cor inox. Painel eletrônico touch, iluminação em LED e prateleiras de vidro temperado.",
+                                                   "Equipamento testado e funcionando, recolhido em leilão de loja de departamentos. Pequenos amassados na lateral que não comprometem o funcionamento."
+                                               ]
+                           },
+    "guarda-roupa":  {
+                         "gallery":  [
+                                         "images/products/guarda-roupa-1.jpg",
+                                         "images/products/guarda-roupa-2.jpg",
+                                         "images/products/guarda-roupa-3.jpg",
+                                         "images/products/guarda-roupa-4.jpg"
+                                     ],
+                         "description":  [
+                                             "Guarda-roupa casal com 8 portas, sendo 2 espelhadas, e cabideiro interno. Estrutura em MDP com acabamento em alto brilho, puxadores em madeira maciça.",
+                                             "Dimensões aproximadas: 2,60m (L) x 2,00m (A) x 0,55m (P). Móvel desmontado, acompanha manual de montagem."
+                                         ]
+                     },
+    "filtro-agua-electrolux":  {
+                                   "gallery":  [
+                                                   "images/products/filtro-agua-electrolux-1.jpg",
+                                                   "images/products/filtro-agua-electrolux-2.jpg",
+                                                   "images/products/filtro-agua-electrolux-3.jpg",
+                                                   "images/products/filtro-agua-electrolux-4.jpg",
+                                                   "images/products/filtro-agua-electrolux-5.jpg"
+                                               ],
+                                   "description":  [
+                                                       "Purificador de água Electrolux com painel touch, três opções de temperatura (natural, fria e gelada) e sistema de filtragem que retém cloro, sedimentos e outras impurezas.",
+                                                       "Reservatório de fácil limpeza e indicador de troca de filtro e lâmpada UV. Bivolt, testado e funcionando."
+                                                   ]
+                               },
+    "fogao-electrolux":  {
+                             "gallery":  [
+                                             "images/products/fogao-electrolux-1.jpg",
+                                             "images/products/fogao-electrolux-2.jpg",
+                                             "images/products/fogao-electrolux-3.jpg",
+                                             "images/products/fogao-electrolux-4.jpg"
+                                         ],
+                             "description":  [
+                                                 "Fogão de piso Electrolux, 5 bocas, mesa em vidro temperado preto e acendimento automático. Forno com vidro interno removível para limpeza e grill.",
+                                                 "Corta-gás de segurança em todas as bocas. Recolhido em leilão de loja, com pequenos sinais de uso na grade."
+                                             ]
+                         },
+    "iphone-15-azul":  {
+                           "gallery":  [
+                                           "images/products/iphone-15-azul-1.jpg",
+                                           "images/products/iphone-15-azul-2.jpg",
+                                           "images/products/iphone-15-azul-3.jpg"
+                                       ],
+                           "description":  [
+                                               "iPhone 15, 128GB, na cor Azul. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                               "Tela Super Retina XDR de 6,1\", chip A16 Bionic, câmera dupla de 48MP com Retrato de última geração e Dynamic Island. Acompanha cabo USB-C na caixa."
+                                           ]
+                       },
+    "iphone-15-rosa":  {
+                           "gallery":  [
+                                           "images/products/iphone-15-rosa-1.jpg",
+                                           "images/products/iphone-15-rosa-2.jpg",
+                                           "images/products/iphone-15-rosa-3.jpg",
+                                           "images/products/iphone-15-rosa-4.jpg"
+                                       ],
+                           "description":  [
+                                               "iPhone 15, 128GB, na cor Rosa. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                               "Tela Super Retina XDR de 6,1\", chip A16 Bionic, câmera dupla de 48MP com Retrato de última geração e Dynamic Island. Acompanha cabo USB-C na caixa."
+                                           ]
+                       },
+    "iphone-16":  {
+                      "gallery":  [
+                                      "images/products/iphone-16-1.png",
+                                      "images/products/iphone-16-2.png",
+                                      "images/products/iphone-16-3.png",
+                                      "images/products/iphone-16-4.png"
+                                  ],
+                      "description":  [
+                                          "iPhone 16, 128GB, na cor Preto. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                          "Tela Super Retina XDR de 6,1\", chip A18, câmera dupla de 48MP com botão de Controle de Câmera. Acompanha cabo USB-C na caixa."
+                                      ]
+                  },
+    "jbl-boombox-3":  {
+                          "gallery":  [
+                                          "images/products/jbl-boombox-3-1.jpg",
+                                          "images/products/jbl-boombox-3-2.png",
+                                          "images/products/jbl-boombox-3-3.png",
+                                          "images/products/jbl-boombox-3-4.png"
+                                      ],
+                          "description":  [
+                                              "Caixa de som portátil JBL Boombox 3, com graves potentes e resistência à água (IP67). Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                              "Bluetooth de longo alcance, até 24h de bateria e alça reforçada para transporte. Acompanha cabo de carregamento."
+                                          ]
+                      },
+    "parafusadeira-dewalt":  {
+                                 "gallery":  [
+                                                 "images/products/parafusadeira-dewalt-1.webp",
+                                                 "images/products/parafusadeira-dewalt-2.webp",
+                                                 "images/products/parafusadeira-dewalt-3.webp",
+                                                 "images/products/parafusadeira-dewalt-4.webp",
+                                                 "images/products/parafusadeira-dewalt-5.webp",
+                                                 "images/products/parafusadeira-dewalt-6.webp",
+                                                 "images/products/parafusadeira-dewalt-7.webp",
+                                                 "images/products/parafusadeira-dewalt-8.webp",
+                                                 "images/products/parafusadeira-dewalt-9.webp",
+                                                 "images/products/parafusadeira-dewalt-10.webp",
+                                                 "images/products/parafusadeira-dewalt-11.webp",
+                                                 "images/products/parafusadeira-dewalt-12.webp"
+                                             ],
+                                 "description":  [
+                                                     "Parafusadeira e Furadeira de Impacto DEWALT DCD7781D2, mandril de 13mm e bateria de 20V MAX. Lote recolhido em leilão com nota fiscal, produto novo e lacrado na maleta original.",
+                                                     "Acompanha 2 baterias de íon-lítio, carregador bivolt e maleta para transporte. Motor brushless, 2 velocidades, embreagem de torque ajustável e luz de LED para trabalho em locais escuros."
+                                                 ]
+                             },
+    "jbl-tour-one":  {
+                         "gallery":  [
+                                         "images/products/jbl-tour-one-1.png",
+                                         "images/products/jbl-tour-one-2.png",
+                                         "images/products/jbl-tour-one-3.png",
+                                         "images/products/jbl-tour-one-4.jpg"
+                                     ],
+                         "description":  [
+                                             "Fone de ouvido over-ear JBL Tour One, com cancelamento ativo de ruído e Bluetooth de longo alcance. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                             "Almofadas confortáveis, até 20h de bateria e estojo rígido para transporte. Acompanha cabo de carregamento."
+                                         ]
+                     },
+    "jbl-partybox-stage320":  {
+                                  "gallery":  [
+                                                  "images/products/jbl-partybox-stage320-1.png",
+                                                  "images/products/jbl-partybox-stage320-2.png",
+                                                  "images/products/jbl-partybox-stage320-3.png",
+                                                  "images/products/jbl-partybox-stage320-4.png",
+                                                  "images/products/jbl-partybox-stage320-5.png"
+                                              ],
+                                  "description":  [
+                                                      "Caixa de som JBL PartyBox Stage 320 com rodas e alça telescópica para transporte, iluminação em LED sincronizada com a música. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                                      "Entradas para microfone e guitarra, Bluetooth para até 5 dispositivos e bateria de longa duração. Ideal para festas."
+                                                  ]
+                              },
+    "jbl-boombox-4":  {
+                          "gallery":  [
+                                          "images/products/jbl-boombox-4-1.webp",
+                                          "images/products/jbl-boombox-4-2.webp",
+                                          "images/products/jbl-boombox-4-3.webp",
+                                          "images/products/jbl-boombox-4-4.webp",
+                                          "images/products/jbl-boombox-4-5.webp"
+                                      ],
+                          "description":  [
+                                              "Caixa de som portátil JBL Boombox 4, com graves potentes, resistência à água e poeira (IP67) e nova bateria de longa duração. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                              "Bluetooth de longo alcance, iluminação integrada e alça reforçada para transporte. Acompanha cabo de carregamento."
+                                          ]
+                      },
+    "poco-x5-5g":  {
+                       "gallery":  [
+                                       "images/products/poco-x5-5g-1.jpg",
+                                       "images/products/poco-x5-5g-2.jpg",
+                                       "images/products/poco-x5-5g-3.jpg"
+                                   ],
+                       "description":  [
+                                           "Smartphone Xiaomi POCO X5 5G, na cor Azul. Aparelho recolhido em leilão com nota fiscal, testado e em pleno funcionamento, com pequenos sinais de uso na embalagem.",
+                                           "Tela AMOLED de 120Hz, conectividade 5G e câmera principal de alta resolução. Acompanha cabo de carregamento."
+                                       ]
+                   },
+    "kit-cozinha-cadence":  {
+                                "gallery":  [
+                                                "images/products/kit-cozinha-cadence-1.png",
+                                                "images/products/kit-cozinha-cadence-2.png",
+                                                "images/products/kit-cozinha-cadence-3.png",
+                                                "images/products/kit-cozinha-cadence-4.png"
+                                            ],
+                                "description":  [
+                                                    "Kit completo de eletroportáteis Cadence: fritadeira sem óleo, chaleira elétrica, cafeteira, torradeira, mixer, sanduicheira e grill. Lote recolhido em leilão, testado e em pleno funcionamento.",
+                                                    "Todos os itens na cor preta, com design combinando. Ideal para equipar a cozinha com praticidade."
+                                                ]
+                            },
+    "kit-3-panelas-pressao":  {
+                                  "gallery":  [
+                                                  "images/products/kit-3-panelas-pressao-1.jpg",
+                                                  "images/products/kit-3-panelas-pressao-2.jpg",
+                                                  "images/products/kit-3-panelas-pressao-3.jpg",
+                                                  "images/products/kit-3-panelas-pressao-4.jpg"
+                                              ],
+                                  "description":  [
+                                                      "Kit com 3 panelas de pressão em alumínio, tamanhos variados, com trava de segurança e válvula de alívio. Lote recolhido em leilão, peças novas na caixa.",
+                                                      "Ideal para o dia a dia, com cabos resistentes ao calor e acompanha concha de servir."
+                                                  ]
+                              },
+    "camera-seguranca-wifi":  {
+                                  "gallery":  [
+                                                  "images/products/camera-seguranca-wifi-1.jpg",
+                                                  "images/products/camera-seguranca-wifi-2.jpg"
+                                              ],
+                                  "description":  [
+                                                      "Câmera de segurança WiFi com rotação 360°, visão noturna e detecção de movimento. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                                      "Compatível com aplicativo para Android e iOS, suporta cartão de memória classe 10 até 128GB e funciona em 110V/220V (bivolt)."
+                                                  ]
+                              },
+    "smart-tv-samsung-43":  {
+                                "gallery":  [
+                                                "images/products/smart-tv-samsung-43-1.webp",
+                                                "images/products/smart-tv-samsung-43-2.webp",
+                                                "images/products/smart-tv-samsung-43-3.webp"
+                                            ],
+                                "description":  [
+                                                    "Smart TV Samsung 43\" 4K Crystal UHD, com Tela Crystal 4K e processador Crystal 4K. Aparelho recolhido em leilão, testado e em pleno funcionamento.",
+                                                    "Acesso a streamings, Samsung TV Plus com canais gratuitos, conexão com SmartThings e segurança Knox. Acompanha controle remoto e cabo de energia."
+                                                ]
+                            },
+    "lava-e-seca-hisense-1i-11kg":  {
+                                        "gallery":  [
+                                                        "images/products/lava-e-seca-hisense-1i-11kg-1.jpg",
+                                                        "images/products/lava-e-seca-hisense-1i-11kg-2.jpg"
+                                                    ],
+                                        "description":  [
+                                                            "Lava e seca branca, modelo WD1i1141BW1, 110 V. Capacidade de lavagem de 11 kg e secagem de 7 kg.",
+                                                            "Motor inverter e 15 programas de lavagem."
+                                                        ]
+                                    },
+    "geladeira-electrolux-it70s-480l":  {
+                                            "gallery":  [
+                                                            "images/products/geladeira-electrolux-it70s-480l-1.jpg",
+                                                            "images/products/geladeira-electrolux-it70s-480l-2.jpg"
+                                                        ],
+                                            "description":  [
+                                                                "Geladeira Electrolux IT70S de duas portas, Frost Free, acabamento Inox Look, com AutoSense e motor Inverter."
+                                                            ]
+                                        },
+    "geladeira-electrolux-tf38-320l":  {
+                                           "gallery":  [
+                                                           "images/products/geladeira-electrolux-tf38-320l-1.jpg",
+                                                           "images/products/geladeira-electrolux-tf38-320l-2.jpg"
+                                                       ],
+                                           "description":  [
+                                                               "Geladeira Electrolux TF38 branca, Frost Free, duplex, com capacidade de 320 litros."
+                                                           ]
+                                       },
+    "lavadora-brastemp-bwf14ab-14kg":  {
+                                           "gallery":  [
+                                                           "images/products/lavadora-brastemp-bwf14ab-14kg-1.jpg",
+                                                           "images/products/lavadora-brastemp-bwf14ab-14kg-2.jpg"
+                                                       ],
+                                           "description":  [
+                                                               "Lavadora Brastemp BWF14AB branca, com capacidade de 14 kg, Smart Sensor e design compacto."
+                                                           ]
+                                       },
+    "smart-tv-samsung-50-u8600f":  {
+                                       "gallery":  [
+                                                       "images/products/smart-tv-samsung-50-u8600f-1.png",
+                                                       "images/products/smart-tv-samsung-50-u8600f-2.png"
+                                                   ],
+                                       "description":  [
+                                                           "Smart TV Samsung 50U8600F de 50 polegadas, Crystal UHD 4K, modelo UN50U8600FGXZD."
+                                                       ]
+                                   },
+    "smart-tv-samsung-65-u8600f":  {
+                                       "gallery":  [
+                                                       "images/products/smart-tv-samsung-65-u8600f-1.jpg",
+                                                       "images/products/smart-tv-samsung-65-u8600f-2.jpg",
+                                                       "images/products/smart-tv-samsung-65-u8600f-3.jpg"
+                                                   ],
+                                       "description":  [
+                                                           "Smart TV Samsung de 65 polegadas Crystal UHD 4K U8600F 2025, modelo UN65U8600FGXZD, bivolt.",
+                                                           "Sistema Tizen, HDR e resolução 4K."
+                                                       ]
+                                   }
+}
