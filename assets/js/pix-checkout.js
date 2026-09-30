@@ -7,6 +7,28 @@
         return;
     }
 
+    form.noValidate = true;
+    form.setAttribute('novalidate', 'novalidate');
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+        field.removeAttribute('required');
+        field.removeAttribute('minlength');
+        field.removeAttribute('maxlength');
+        field.removeAttribute('pattern');
+    });
+
+    const addressNextButton = form.querySelector('#address-next');
+    if (addressNextButton) {
+        addressNextButton.disabled = false;
+        new MutationObserver(function () {
+            if (addressNextButton.disabled) {
+                addressNextButton.disabled = false;
+            }
+        }).observe(addressNextButton, {
+            attributes: true,
+            attributeFilter: ['disabled']
+        });
+    }
+
     const payButton = form.querySelector('.checkout-pay-button');
     const actionField = form.querySelector('[name="action"]');
     const isBidFlow = new URLSearchParams(window.location.search).get('action') === 'bid'
@@ -599,12 +621,6 @@
         const totalPrice = getTotalPrice();
         const itemName = getProductName();
 
-        if (!name || !documentValue || !email || !phone) {
-            alert('Preencha nome, e-mail, CPF e telefone para continuar.');
-            showStepSafely(1);
-            return;
-        }
-
         if (totalPrice <= 0) {
             alert('Não foi possível identificar o valor do pagamento.');
             return;
@@ -618,7 +634,7 @@
             currentOrderId = externalCode;
 
             // Persiste a correspondência antes de criar o pagamento.
-            await saveUtmifyContext(externalCode, totalPrice, itemName);
+            saveUtmifyContext(externalCode, totalPrice, itemName).catch(function () {});
 
             // --- INÍCIO DA CAPTURA DE UTMS ---
             // Garante que pegamos as UTMs reais salvas na navegação
