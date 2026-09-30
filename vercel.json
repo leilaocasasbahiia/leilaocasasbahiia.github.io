@@ -1,17 +1,28 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "npm run build",
-  "outputDirectory": "public",
-  "functions": { "api/*.js": { "maxDuration": 30 } },
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "arremata-leilao.vercel.app" }],
+      "destination": "https://leilaocasasbahiia.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "arremata-leilao.vercel.app" }],
+      "destination": "https://leilaocasasbahiia.vercel.app/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "X-Content-Type-Options", "value": "nosniff" },
-      { "key": "Referrer-Policy", "value": "same-origin" },
-      { "key": "X-Frame-Options", "value": "DENY" }
-    ] },
-    { "source": "/api/(.*)", "headers": [
-      { "key": "Cache-Control", "value": "no-store" }
-    ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "same-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    }
   ]
 }

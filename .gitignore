@@ -1,12 +1,6 @@
-node_modules/
-.local-data/
-public/
-.vercel/
+.env*
 .tools/
-.env*
-!.env.example
+.vercel/
 Microsoft/
-test-results/
-
-.vercel
-.env*
+node_modules/
+public/
