@@ -3,6 +3,10 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/api/create-pix.php",
+      "destination": "/api/create-pix"
+    },
+    {
       "source": "/api/:path*",
       "destination": "https://acesso.aprovadooficial.is/bhia2/api/:path*"
     }

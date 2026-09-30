@@ -164,6 +164,9 @@
         }
         return result;
     } function trackBrowserPurchase(result, payment) {
+        if (purchaseTracked) {
+            return true;
+        }
         if (!result || !result.eventId || typeof window.fbq !== 'function') {
             return false;
         }
@@ -669,6 +672,13 @@
             );
 
             showPix(response, totalPrice);
+            if (typeof window.metaFunnelPurchase === 'function') {
+                window.metaFunnelPurchase({
+                    contentId: getLotId() || 'produto',
+                    value: totalPrice
+                }, 'purchase_' + externalCode);
+                purchaseTracked = true;
+            }
             startPaymentPolling(lastPayment);
 
         } catch (error) {

@@ -1,3 +1,7 @@
+var metaFunnelScript = document.createElement('script');
+metaFunnelScript.src = new URL('meta-funnel.js', document.currentScript.src).href;
+document.head.appendChild(metaFunnelScript);
+
 (function () {
     'use strict';
 
