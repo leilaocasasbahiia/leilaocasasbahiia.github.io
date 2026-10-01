@@ -1,5 +1,8 @@
 'use strict';
 
+const QRCode = require('../lib/vendor/QRCode');
+const QRErrorCorrectLevel = require('../lib/vendor/QRCode/QRErrorCorrectLevel');
+
 const recipient = {
     key: '44769766000100',
     name: 'GRUPO CASAS BAHIA',
@@ -36,6 +39,27 @@ function pixCode(amount, txid) {
     return payload + crc16(payload);
 }
 
+function qrImage(payload) {
+    const qr = new QRCode(-1, QRErrorCorrectLevel.M);
+    qr.addData(payload);
+    qr.make();
+
+    const count = qr.getModuleCount();
+    const size = count + 8;
+    let commands = '';
+
+    for (let row = 0; row < count; row += 1) {
+        for (let column = 0; column < count; column += 1) {
+            if (qr.isDark(row, column)) {
+                commands += `M${column + 4} ${row + 4}h1v1h-1z`;
+            }
+        }
+    }
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges"><path fill="#fff" d="M0 0h${size}v${size}H0z"/><path fill="#000" d="${commands}"/></svg>`;
+    return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
+}
+
 module.exports = function handler(request, response) {
     if (request.method !== 'POST') {
         return response.status(405).json({ success: false, message: 'Método não permitido.' });
@@ -49,9 +73,12 @@ module.exports = function handler(request, response) {
     const rawCode = String(request.body.external_code || Date.now()).replace(/[^a-zA-Z0-9]/g, '');
     const txid = (rawCode || 'CASASBAHIA').slice(0, 25);
 
+    const code = pixCode(amount, txid);
+
     return response.status(200).json({
         success: true,
-        pixCode: pixCode(amount, txid),
+        pixCode: code,
+        qrCodeUrl: qrImage(code),
         paymentCode: null
     });
 };

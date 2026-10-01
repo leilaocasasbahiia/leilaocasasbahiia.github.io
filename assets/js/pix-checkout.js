@@ -915,6 +915,7 @@
             '<p>Copie o código abaixo e cole no aplicativo do seu banco.</p>' +
             '<small class="pix-amount-caption">VALOR DO PAGAMENTO</small>' +
             '<div class="pix-amount" id="pix-amount-label"></div>' +
+            '<img class="pix-qr-code" id="pix-qr-code" alt="QR Code Pix" hidden>' +
             '<div class="pix-reservation" id="pix-reservation">' +
             '<span>Produto reservado por:</span>' +
             '<strong id="pix-reservation-time">05:00</strong>' +
@@ -1008,6 +1009,7 @@
         const box = document.getElementById('pix-payment-box');
         const codeInput = document.getElementById('pix-code');
         const amountLabel = document.getElementById('pix-amount-label');
+        const qrCode = document.getElementById('pix-qr-code');
         const waiting = document.getElementById('pix-waiting-state');
         const success = document.getElementById('pix-success-state');
         const editAddress = form.querySelector('.checkout-edit-address');
@@ -1022,6 +1024,11 @@
         }
 
         codeInput.value = response.pixCode || '';
+
+        if (qrCode && response.qrCodeUrl) {
+            qrCode.src = response.qrCodeUrl;
+            qrCode.hidden = false;
+        }
 
         if (amountLabel) {
             amountLabel.textContent = formatMoney(totalPrice);
@@ -1251,6 +1258,8 @@
             '.pix-primary-card>p{margin:0;color:#667085;font-size:12px}' +
             '.pix-amount-caption{margin-top:14px;color:#667085;font-size:9px;font-weight:900}' +
             '#pix-payment-box .pix-primary-card .pix-amount{margin:3px 0 4px;color:#075dcc;font-size:34px;line-height:1.05;font-weight:900}' +
+            '#pix-payment-box .pix-qr-code{display:block;width:220px;height:220px;margin:14px auto;padding:8px;border:1px solid #dce6f3;border-radius:12px;background:#fff}' +
+            '#pix-payment-box .pix-qr-code[hidden]{display:none}' +
             '#pix-payment-box .pix-primary-card .pix-reservation{margin:9px 0 14px;padding:9px;border-color:#dce6f3;background:#fff}' +
             '#pix-payment-box .pix-primary-card .pix-reservation strong{color:#e72739;font-size:24px}' +
             '.pix-copy-label{text-align:left}' +
