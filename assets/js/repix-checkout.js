@@ -16,7 +16,6 @@
     let observer = null;
 
     injectStyles();
-    watchPixPanel();
 
     function readOrder() {
         try {
