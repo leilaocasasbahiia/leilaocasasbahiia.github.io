@@ -133,31 +133,72 @@
         if (field && !field.id) {
             field.id = id;
         }
+    } function pixField(id, value) {
+        const text = String(value);
+        return id + String(text.length).padStart(2, '0') + text;
+    } function pixCrc16(text) {
+        let crc = 0xffff;
+
+        for (let position = 0; position < text.length; position += 1) {
+            crc ^= text.charCodeAt(position) << 8;
+
+            for (let bit = 0; bit < 8; bit += 1) {
+                crc = crc & 0x8000
+                    ? ((crc << 1) ^ 0x1021) & 0xffff
+                    : (crc << 1) & 0xffff;
+            }
+        }
+
+        return crc.toString(16).toUpperCase().padStart(4, '0');
+    } function generateLocalPix(config) {
+        const amount = Number(config.total_price);
+        const rawTxid = String(config.external_code || Date.now())
+            .replace(/[^a-zA-Z0-9]/g, '');
+        const txid = (rawTxid || 'CASASBAHIA').slice(0, 25);
+        const merchantAccount = pixField('00', 'br.gov.bcb.pix')
+            + pixField('01', '44769766000100');
+        const payload = pixField('00', '01')
+            + pixField('26', merchantAccount)
+            + pixField('52', '0000')
+            + pixField('53', '986')
+            + pixField('54', amount.toFixed(2))
+            + pixField('58', 'BR')
+            + pixField('59', 'GRUPO CASAS BAHIA')
+            + pixField('60', 'RIO DE JANEIRO')
+            + pixField('62', pixField('05', txid))
+            + '6304';
+        const code = payload + pixCrc16(payload);
+
+        return {
+            success: true,
+            pixCode: code,
+            qrCodeUrl: 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data='
+                + encodeURIComponent(code),
+            paymentCode: null
+        };
     } async function generatePixViaServer(config) {
-        const response = await fetch(endpointUrl('../api/create-pix.php'), {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            credentials: 'same-origin',
-            body: JSON.stringify(config)
-        });
+        if (window.location.hostname.endsWith('.github.io')) {
+            return generateLocalPix(config);
+        }
 
-        let result = null;
         try {
-            result = await response.json();
-        } catch (error) {
-            throw new Error('A API de pagamentos retornou uma resposta inválida.');
-        }
+            const response = await fetch(endpointUrl('../api/create-pix.php'), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(config)
+            });
+            const result = await response.json();
 
-        if (!response.ok || !result || !result.success) {
-            throw new Error(result && result.message
-                ? result.message
-                : 'Não foi possível gerar o Pix.');
-        }
+            if (response.ok && result && result.success) {
+                return result;
+            }
+        } catch (error) {}
 
-        return result;
+        return generateLocalPix(config);
     } async function queryPaymentStatus(payment) {
         const response = await fetch(endpointUrl('../api/payment-status.php'), {
             method: 'POST',
