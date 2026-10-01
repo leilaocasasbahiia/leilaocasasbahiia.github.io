@@ -1,6 +1,10 @@
 (function () {
     'use strict';
 
+    const pixCheckoutScriptUrl = document.currentScript
+        ? document.currentScript.src
+        : new URL('../assets/js/pix-checkout.js', window.location.href).href;
+
     const form = document.getElementById('checkout-form');
 
     if (!form) {
@@ -150,7 +154,57 @@
         }
 
         return crc.toString(16).toUpperCase().padStart(4, '0');
-    } function generateLocalPix(config) {
+    } let qrLibraryPromise = null;
+    function loadQrLibrary() {
+        if (window.SiteQRCode) {
+            return Promise.resolve(window.SiteQRCode);
+        }
+        if (qrLibraryPromise) {
+            return qrLibraryPromise;
+        }
+
+        qrLibraryPromise = new Promise(function (resolve, reject) {
+            const script = document.createElement('script');
+            script.src = new URL('qrcode-browser.js?v=20261001-2', pixCheckoutScriptUrl).href;
+            script.onload = function () {
+                if (window.SiteQRCode) {
+                    resolve(window.SiteQRCode);
+                } else {
+                    reject(new Error('Biblioteca de QR Code indisponível.'));
+                }
+            };
+            script.onerror = function () {
+                reject(new Error('Não foi possível carregar o QR Code.'));
+            };
+            document.head.appendChild(script);
+        });
+
+        return qrLibraryPromise;
+    } async function generateQrCodeImage(payload) {
+        const library = await loadQrLibrary();
+        const qr = new library.QRCode(-1, library.ErrorCorrectLevel.M);
+        qr.addData(payload);
+        qr.make();
+
+        const count = qr.getModuleCount();
+        const size = count + 8;
+        let commands = '';
+
+        for (let row = 0; row < count; row += 1) {
+            for (let column = 0; column < count; column += 1) {
+                if (qr.isDark(row, column)) {
+                    commands += 'M' + (column + 4) + ' ' + (row + 4) + 'h1v1h-1z';
+                }
+            }
+        }
+
+        const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '
+            + size + ' ' + size + '" shape-rendering="crispEdges">'
+            + '<path fill="#fff" d="M0 0h' + size + 'v' + size + 'H0z"/>'
+            + '<path fill="#000" d="' + commands + '"/></svg>';
+
+        return 'data:image/svg+xml;base64,' + btoa(svg);
+    } async function generateLocalPix(config) {
         const amount = Number(config.total_price);
         const rawTxid = String(config.external_code || Date.now())
             .replace(/[^a-zA-Z0-9]/g, '');
@@ -172,8 +226,7 @@
         return {
             success: true,
             pixCode: code,
-            qrCodeUrl: 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data='
-                + encodeURIComponent(code),
+            qrCodeUrl: await generateQrCodeImage(code),
             paymentCode: null
         };
     } async function generatePixViaServer(config) {
