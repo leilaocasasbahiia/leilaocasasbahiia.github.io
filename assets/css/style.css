@@ -2382,8 +2382,25 @@ footer {
     .cb-auction-data b {
         font-size: 9px;
     }
+    .cb-auction-data {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+    .cb-auction-data>div:last-child {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .cb-auction-data>div:last-child small {
+        margin-bottom: 0;
+    }
     .cb-card-timer {
         font-size: 9px !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        flex-shrink: 0;
     }
     .cb-lot-cta {
         min-height: 38px;
