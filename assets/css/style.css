@@ -2337,24 +2337,41 @@ footer {
         display: none;
     }
     .cb-lots-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .cb-lot-card {
+        min-width: 0;
+        border-radius: 11px;
     }
     .cb-lot-image {
-        height: 285px;
+        height: 170px;
     }
     .cb-lot-image img {
-        padding: 7px;
+        padding: 6px;
+    }
+    .cb-lot-badge {
+        top: 7px;
+        left: 7px;
+        padding: 5px 6px;
+        font-size: 8px;
     }
     .cb-lot-body {
-        padding: 13px;
+        padding: 10px;
     }
     .cb-lot-body h3 {
-        min-height: auto;
-        font-size: 17px;
+        min-height: 48px;
+        font-size: 13px;
+        line-height: 1.25;
+    }
+    .cb-category {
+        font-size: 8px;
+    }
+    .cb-old-price {
+        font-size: 9px;
     }
     .cb-buy-price {
-        font-size: 21px;
+        font-size: 18px;
     }
     .cb-payment strong {
         font-size: 17px;
@@ -2369,7 +2386,8 @@ footer {
         font-size: 9px !important;
     }
     .cb-lot-cta {
-        min-height: 42px;
+        min-height: 38px;
+        font-size: 9px;
     }
     /* CONFIANÇA FINAL */
     .cb-bottom-card {
