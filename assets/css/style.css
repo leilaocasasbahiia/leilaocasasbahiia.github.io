@@ -2337,8 +2337,8 @@ footer {
         display: none;
     }
     .cb-lots-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
     }
     .cb-lot-image {
         height: 285px;
