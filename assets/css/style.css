@@ -89,6 +89,31 @@ a {
    TOP BAR
 ========================================================= */
 
+.exclusive-offers-bar {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    background: #1737b7;
+    border-bottom: 4px solid #ff315d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.exclusive-offers-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exclusive-offers-chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+}
+
 .topbar {
     background: var(--red);
     color: #fff;
