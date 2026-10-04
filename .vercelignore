@@ -1,6 +1,0 @@
-.env*
-.tools/
-.vercel/
-Microsoft/
-node_modules/
-public/
