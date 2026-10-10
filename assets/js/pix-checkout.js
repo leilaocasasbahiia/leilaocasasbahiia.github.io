@@ -985,24 +985,6 @@
         box.hidden = true;
         box.innerHTML =
             '<div id="pix-waiting-state">' +
-            '<div class="pix-final-head">' +
-            '<div class="pix-final-check">✓</div>' +
-            '<span>ÚLTIMA ETAPA</span>' +
-            '<h2>Finalize seu pagamento</h2>' +
-            '<p>Faça o pagamento do valor total via Pix. A confirmação acontece automaticamente.</p>' +
-            '</div>' +
-            '<div class="pix-video-intro">' +
-            '<strong>Veja o vídeo antes de pagar</strong>' +
-            '<small>Assista às instruções rápidas para realizar o Pix corretamente.</small>' +
-            '</div>' +
-            '<div class="pix-video-wrap">' +
-            '<vturb-smartplayer id="vid-6ab047ad1e9c6590edc06c1d" style="display:block;margin:0 auto;width:100%">' +
-            '<div class="vturb-player-placeholder" style="position:relative;width:100%;padding:56.25% 0 0;z-index:0;background-color:black"></div>' +
-            '</vturb-smartplayer>' +
-            '</div>' +
-            '<a class="pix-finish-anchor" id="pix-finish-anchor" href="#pix-pay-section">' +
-            'Finalize o pagamento' +
-            '</a>' +
             '<div class="pix-primary-card" id="pix-pay-section">' +
             '<span class="pix-label-pill">PIX</span>' +
             '<h3>Pague agora pelo Pix</h3>' +
@@ -1073,32 +1055,6 @@
             copyBtn.addEventListener('click', copyPixCode);
         }
 
-        const finishAnchor = document.getElementById('pix-finish-anchor');
-
-        if (finishAnchor) {
-            finishAnchor.addEventListener('click', function (event) {
-                event.preventDefault();
-                const paySection = document.getElementById('pix-pay-section');
-
-                if (paySection) {
-                    paySection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        }
-
-    } function loadPixInstructionsVideo() {
-        if (document.getElementById('pix-vturb-player-script')) {
-            return;
-        }
-
-        const script = document.createElement('script');
-        script.id = 'pix-vturb-player-script';
-        script.src = 'https://scripts.converteai.net/fba0fd90-cdab-473c-a81e-5bbbeaa647af/players/6ab047ad1e9c6590edc06c1d/v4/player.js';
-        script.async = true;
-        document.head.appendChild(script);
     } function showPix(response, totalPrice) {
         const box = document.getElementById('pix-payment-box');
         const codeInput = document.getElementById('pix-code');
@@ -1151,7 +1107,6 @@
             addressZip.textContent = zip ? 'CEP ' + zip : '';
         }
 
-        loadPixInstructionsVideo();
         startReservationTimer();
 
         if (waiting) {
@@ -1176,9 +1131,8 @@
             editAddress.hidden = true;
         }
 
-        // Mantém o vídeo visível primeiro; o Pix fica abaixo da âncora
-        const videoIntro = box.querySelector('.pix-final-head') || box;
-        videoIntro.scrollIntoView({
+        const pixCard = box.querySelector('.pix-primary-card');
+        pixCard.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
@@ -1335,17 +1289,6 @@
             '.checkout-step.pix-payment-active>:not(#pix-payment-box){display:none!important}' +
             '#pix-payment-box [hidden]{display:none!important}' +
             '#pix-waiting-state{display:grid;gap:18px}' +
-            '.pix-final-head{display:grid;justify-items:center;text-align:center}' +
-            '.pix-final-check{display:grid;width:64px;height:64px;margin-bottom:12px;place-items:center;border-radius:50%;background:#e4f8ec;color:#14894f;font-size:38px;font-weight:900}' +
-            '.pix-final-head>span{color:#075dcc;font-size:12px;font-weight:900;letter-spacing:1.1px}' +
-            '.pix-final-head h2{margin:7px 0 8px;color:#172033;font-size:31px;line-height:1.1}' +
-            '.pix-final-head p{max-width:520px;margin:0;color:#667085;font-size:14px;line-height:1.45}' +
-            '.pix-video-intro{display:grid;gap:4px;margin-top:8px;text-align:center}' +
-            '.pix-video-intro strong{font-size:15px}' +
-            '.pix-video-intro small{color:#667085;font-size:11px}' +
-            '.pix-video-wrap{overflow:hidden;border-radius:13px;background:#000;box-shadow:0 5px 18px rgba(23,32,51,.10)}' +
-            '.pix-finish-anchor{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;margin:4px 0 2px;border-radius:10px;background:#075dcc;color:#fff;font-size:16px;font-weight:900;text-decoration:none;box-shadow:0 5px 12px rgba(7,93,204,.18)}' +
-            '.pix-finish-anchor:hover{filter:brightness(.96)}' +
             '.pix-primary-card{display:grid;justify-items:stretch;padding:20px;border:2px solid #075dcc;border-radius:16px;background:#f5f8fd;text-align:center;scroll-margin-top:18px}' +
             '.pix-label-pill{justify-self:center;padding:4px 12px;border-radius:999px;background:#e7f0ff;color:#075dcc;font-size:11px;font-weight:900;letter-spacing:1px}' +
             '.pix-primary-card h3{margin:8px 0 4px;font-size:21px}' +
@@ -1419,7 +1362,7 @@
             '.bid-flow-payment-note p{margin:8px 0;color:#172033;font-size:13px;line-height:1.5}' +
             '.bid-flow-pay-button{width:100%;min-height:56px;border:0;border-radius:10px;background:#075dcc;color:#fff;font:inherit;font-size:15px;font-weight:900;cursor:pointer}' +
             '.bid-flow-security{margin-top:12px;color:#667085;font-size:10px}' +
-            '@media(max-width:540px){#pix-payment-box{padding:20px 13px}.pix-final-head h2{font-size:25px}.pix-final-head p{font-size:12px}.pix-primary-card{padding:16px 12px}.pix-primary-card h3{font-size:19px}#pix-payment-box .pix-primary-card .pix-amount{font-size:30px}.pix-product-card img{width:62px;height:62px}.bid-flow-screen{padding:10px 0 4px}.bid-flow-screen h1{font-size:27px}.bid-flow-subtitle{font-size:13px}.bid-flow-time{font-size:46px}.bid-flow-product img{width:68px;height:68px}.bid-flow-value-card strong{font-size:30px}}' +
+            '@media(max-width:540px){#pix-payment-box{padding:20px 13px}.pix-primary-card{padding:16px 12px}.pix-primary-card h3{font-size:19px}#pix-payment-box .pix-primary-card .pix-amount{font-size:30px}.pix-product-card img{width:62px;height:62px}.bid-flow-screen{padding:10px 0 4px}.bid-flow-screen h1{font-size:27px}.bid-flow-subtitle{font-size:13px}.bid-flow-time{font-size:46px}.bid-flow-product img{width:68px;height:68px}.bid-flow-value-card strong{font-size:30px}}' +
             '@keyframes pixPulse{0%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1)}100%{opacity:.35;transform:scale(.85)}}';
 
         document.head.appendChild(style);
