@@ -987,7 +987,7 @@
             '<div id="pix-waiting-state">' +
             '<div class="pix-primary-card" id="pix-pay-section">' +
             '<span class="pix-label-pill">PIX</span>' +
-            '<h3>Pague agora pelo Pix</h3>' +
+            '<h3>Pague agora e garanta seu lote!</h3>' +
             '<p>Copie o código abaixo e cole no aplicativo do seu banco.</p>' +
             '<small class="pix-amount-caption">VALOR DO PAGAMENTO</small>' +
             '<div class="pix-amount" id="pix-amount-label"></div>' +
