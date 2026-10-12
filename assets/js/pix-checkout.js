@@ -856,7 +856,7 @@
             '<p>O pagamento será realizado via Pix. Após a confirmação, seu pedido seguirá para processamento.</p>' +
             '</div>' +
             '<button type="button" class="bid-flow-pay-button" id="bid-flow-pay">' +
-            'PAGAR ' + escapeHtml(value) + ' VIA PIX' +
+            'Finalizar compra' +
             '</button>' +
             '<small class="bid-flow-security">🔒 Pagamento via Pix · confirmação automática</small>' +
             '</section>';
