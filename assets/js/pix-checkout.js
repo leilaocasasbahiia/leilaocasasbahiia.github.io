@@ -1046,7 +1046,7 @@
             '<div><small>SEU PRODUTO</small><strong>' + escapeHtml(productName) + '</strong><span>LOTE ' + escapeHtml(lotId) + '</span></div>' +
             '</div>' +
             '<div class="pix-shipping-card">' +
-            '<span>🚚</span><div><small>SUA ENTREGA</small><strong>FRETE GRÁTIS</strong><p>Prazo estimado: 5 a 12 dias úteis</p></div>' +
+            '<span>🚚</span><div><small>SUA ENTREGA</small><strong>FRETE GRÁTIS</strong><p>Prazo estimado: 2 a 5 dias úteis</p></div>' +
             '</div>' +
             '<div class="pix-address-card">' +
             '<strong>📍 Será entregue em:</strong>' +
