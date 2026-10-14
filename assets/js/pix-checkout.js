@@ -50,11 +50,13 @@
     let paymentPollTimeout = null;
     let paymentPollStartedAt = 0;
     let bidStage = isBidFlow ? 'confirmation' : 'payment';
+    let paymentMethod = 'pix';
 
     injectStyles();
     ensureFieldIds();
     ensurePixPanel();
     ensureBidPanels();
+    ensurePaymentMethods();
 
     form.addEventListener(
         'submit',
@@ -65,6 +67,11 @@
 
             if (isBidFlow && bidStage === 'confirmation') {
                 showBidCountdown();
+                return;
+            }
+
+            if (paymentMethod === 'boleto') {
+                submitBoletoPayment();
                 return;
             }
 
@@ -113,7 +120,55 @@
         setTimeout(function () {
             window.location.href = getUpsellPageUrl();
         }, 900);
-    }; function getUpsellPageUrl() {
+    }; function ensurePaymentMethods() {
+        if (!payButton || document.getElementById('payment-methods')) {
+            return;
+        }
+
+        const methods = document.createElement('div');
+        methods.id = 'payment-methods';
+        methods.className = 'payment-methods';
+        methods.innerHTML =
+            '<strong class="payment-methods-title">Forma de pagamento</strong>' +
+            '<div class="payment-method-options">' +
+            '<label class="payment-method-option is-selected">' +
+            '<input type="radio" name="payment_method" value="pix" checked>' +
+            '<span class="payment-method-icon">◆</span>' +
+            '<span><b>Pix</b><small>Aprovação imediata</small></span>' +
+            '</label>' +
+            '<label class="payment-method-option">' +
+            '<input type="radio" name="payment_method" value="boleto">' +
+            '<span class="payment-method-icon payment-method-barcode">▥</span>' +
+            '<span><b>Boleto bancário</b><small>Pagamento em até 1 dia útil</small></span>' +
+            '</label>' +
+            '</div>';
+
+        payButton.insertAdjacentElement('beforebegin', methods);
+
+        methods.querySelectorAll('input[name="payment_method"]').forEach(function (input) {
+            input.addEventListener('change', function () {
+                paymentMethod = input.value;
+                methods.querySelectorAll('.payment-method-option').forEach(function (option) {
+                    option.classList.toggle(
+                        'is-selected',
+                        option.querySelector('input').checked
+                    );
+                });
+                payButton.textContent = paymentMethod === 'boleto'
+                    ? 'Gerar boleto bancário'
+                    : originalButtonText;
+            });
+        });
+    } function submitBoletoPayment() {
+        if (!payButton || generating) {
+            return;
+        }
+
+        generating = true;
+        payButton.disabled = true;
+        payButton.textContent = 'Gerando boleto...';
+        form.submit();
+    } function getUpsellPageUrl() {
         // checkout/*.html → ../upsell.html | páginas na raiz → upsell.html
         if (/\/checkout\//i.test(window.location.pathname)) {
             return new URL('../upsell.html', window.location.href).href;
@@ -1362,6 +1417,17 @@
             '.bid-flow-payment-note p{margin:8px 0;color:#172033;font-size:13px;line-height:1.5}' +
             '.bid-flow-pay-button{width:100%;min-height:56px;border:0;border-radius:10px;background:#075dcc;color:#fff;font:inherit;font-size:15px;font-weight:900;cursor:pointer}' +
             '.bid-flow-security{margin-top:12px;color:#667085;font-size:10px}' +
+            '.payment-methods{display:grid;gap:10px;margin:0 0 16px;text-align:left}' +
+            '.payment-methods-title{color:#172033;font-size:14px}' +
+            '.payment-method-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}' +
+            '.payment-method-option{display:flex;align-items:center;gap:10px;box-sizing:border-box;min-height:68px;padding:12px;border:1px solid #d7e1ee;border-radius:12px;background:#fff;cursor:pointer}' +
+            '.payment-method-option.is-selected{border:2px solid #075dcc;padding:11px;background:#f5f8fd}' +
+            '.payment-method-option input{position:absolute;opacity:0;pointer-events:none}' +
+            '.payment-method-option>span:last-child{display:grid;gap:3px}' +
+            '.payment-method-option b{color:#172033;font-size:13px}' +
+            '.payment-method-option small{color:#667085;font-size:9px;line-height:1.25}' +
+            '.payment-method-icon{display:grid;width:34px;height:34px;flex:0 0 auto;place-items:center;border-radius:50%;background:#e7f0ff;color:#075dcc;font-size:17px;font-weight:900}' +
+            '.payment-method-barcode{font-size:22px}' +
             '@media(max-width:540px){#pix-payment-box{padding:20px 13px}.pix-primary-card{padding:16px 12px}.pix-primary-card h3{font-size:19px}#pix-payment-box .pix-primary-card .pix-amount{font-size:30px}.pix-product-card img{width:62px;height:62px}.bid-flow-screen{padding:10px 0 4px}.bid-flow-screen h1{font-size:27px}.bid-flow-subtitle{font-size:13px}.bid-flow-time{font-size:46px}.bid-flow-product img{width:68px;height:68px}.bid-flow-value-card strong{font-size:30px}}' +
             '@keyframes pixPulse{0%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1)}100%{opacity:.35;transform:scale(.85)}}';
 
